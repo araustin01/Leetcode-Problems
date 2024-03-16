@@ -4,7 +4,7 @@ function lengthOfLongestSubstring(s: string): number {
     
     for(let i = 0; i < s.length; i++) {
         let c: string = s.charAt(i);
-        sub = sub.substring(sub.indexOf(c)+1) + c // shift string appropriately 
+        sub = sub.substring(sub.indexOf(c)+1) + c; // shift string appropriately 
         if(sub.length > lsub.length)
             lsub = sub; // track largest consecutive string
     }
