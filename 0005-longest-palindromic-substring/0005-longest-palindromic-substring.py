@@ -1,5 +1,5 @@
-class Solution:
-    def longestPalindrome(self, s: str) -> str:
+class Solution(object):
+    def longestPalindrome(self, s):
         start = 0
         maxLength = 1
         n = len(s)
@@ -26,3 +26,4 @@ class Solution:
                 right += 1
 
         return s[start:start + maxLength]
+        
