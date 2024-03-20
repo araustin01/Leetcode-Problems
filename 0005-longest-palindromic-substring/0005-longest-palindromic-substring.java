@@ -11,10 +11,10 @@ class Solution {
             int left = i;
             int right = i;
 
-            // Expand around center for odd-length palindromes
+            // Expand around center for odd-length palindromes (aba)
             while (left >= 0 && right < n && s.charAt(left) == s.charAt(right)) {
                 int length = right - left + 1;
-                if (length > maxLength) {
+                if (length > maxLength) { // is next longest palindrome
                     maxLength = length;
                     start = left;
                 }
@@ -25,10 +25,10 @@ class Solution {
             left = i;
             right = i + 1;
 
-            // Expand around center for even-length palindromes
+            // Expand around center for even-length palindromes (abba)
             while (left >= 0 && right < n && s.charAt(left) == s.charAt(right)) {
                 int length = right - left + 1;
-                if (length > maxLength) {
+                if (length > maxLength) { // is next longest palindrome
                     maxLength = length;
                     start = left;
                 }
