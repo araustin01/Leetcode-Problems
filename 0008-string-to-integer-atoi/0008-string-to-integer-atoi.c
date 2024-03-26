@@ -30,14 +30,9 @@ int myAtoi(char* s) {
     while((digit = toDigit(*s++)) > -1) { // construct number from head to tail
         // check for overflow
         uint64_t atoi_long = ((uint64_t) atoi * 10) + digit;
-        printf("atoi_long = %ld\n", atoi_long);
-        if(neg ? atoi_long >= pow(2, 31) : atoi_long >= pow(2, 31) - 1) {
-            printf("Clamp!\n");
+        if(neg ? atoi_long >= pow(2, 31) : atoi_long >= pow(2, 31) - 1) 
             return neg ? pow(-2,31) : pow(2,31) - 1; // clamp
-        }
         atoi = (int) atoi_long;
-        printf("atoi = %d\n", atoi);
     }
-    printf("\nReturning %d", atoi);
     return neg ? -1 * atoi : atoi;
 }
