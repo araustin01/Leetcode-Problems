@@ -29,7 +29,7 @@ int myAtoi(char* s) {
     int digit = 0;
     while((digit = toDigit(*s++)) > -1) { // construct number from head to tail
         // check for overflow
-        uint64_t atoi_long = ((uint64_t) atoi * 10) + digit;
+        uint64_t atoi_long = ((uint64_t) atoi * 10) + digit; // temporary unsigned value to check for overflow
         if(neg ? atoi_long >= pow(2, 31) : atoi_long >= pow(2, 31) - 1) 
             return neg ? pow(-2,31) : pow(2,31) - 1; // clamp
         atoi = (int) atoi_long;
